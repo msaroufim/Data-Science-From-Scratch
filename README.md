@@ -10,8 +10,15 @@ cat someFile.txt | python egrep.py "[0-9]" | python line_count.py
 
 ##Web Scraping
 
-Be sure you've set up a virtual environment and then just use BeautifulSoup, Requests and html5lib.
+Be sure you've set up a virtual environment and then just use BeautifulSoup, Requests and html5lib. Please checkout  a page's robots.txt and terms before you do something like this.
 
 ```python
 source_code_of_a_webpage = BeautifulSoup(requests.get(url_of_page).text,'html5lib')
+```
+
+When you're working with json, transform your data to a dictionary and be happy
+
+```python
+import json
+deserialized = json.loads(serialized_json)
 ```
