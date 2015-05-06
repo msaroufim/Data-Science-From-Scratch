@@ -27,10 +27,27 @@ deserialized = json.loads(serialized_json)
 
 ###Twitter API
 
-Get some credentials at https://apps.twitter.com
+Get some credentials at https://apps.twitter.com . Please don't check in your consumer_key and secret_key in your repo.
 
 ```
 Web-Scraping/twitter.py
 
 twitter.py CONSUMER_KEY SECRET_KEY
 ```
+
+##Working with data
+
+The size of the range of a feature should not affect its predictive power so it's usually a good idea to rescale your dataset to have mean 0 and variance 1.
+```python
+return (data_matrix[i,j] - means[j])/stdevs[j]
+```
+
+You don't want your parser to break if some value is not expected
+```python
+def try_or_none(f):
+    def f_or_none(x):
+        try: return f(x)
+        except: return f_or_none
+    return f_or_none
+```
+
