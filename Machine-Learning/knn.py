@@ -30,3 +30,4 @@ def knn_classify(k, labeled_points, new_point):
 	k_nearest_labels = [label for _,label in by_distance[:k]]
 
 	return majority_vote(k_nearest_labels)
+
