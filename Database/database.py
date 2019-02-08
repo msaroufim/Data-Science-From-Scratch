@@ -31,7 +31,7 @@ def update(self,updates,predicate):
 			for column, new_value in updates.iteritems():
 				row[column] = new_value
 
-#usage
+#usability
 #users.update({'num_friends' : 3},
 #			   lambda row: row['users_id'] == 1)
 
